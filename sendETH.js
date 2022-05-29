@@ -7,11 +7,11 @@ const account2 = '0xCdA189005BFBe90bc2D518f69FfB937EcdFfB3f3'
 
 var privateKey1 = Buffer.from('b202eca8eb24ce8fed61a6f907c16defafeb81af037333b4331f2607ed5533b0', 'hex');
 
-web.eth.getBalance(account1, (err, balance) => {
+web3.eth.getBalance(account1, (err, balance) => {
     console.log("Balance account 1: ",balance);
 })
 
-web.eth.getBalance(account2, (err, balance) => {
+web3.eth.getBalance(account2, (err, balance) => {
     console.log("Balance account 2: ",balance);
 })
 
