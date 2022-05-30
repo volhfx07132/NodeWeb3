@@ -355,11 +355,11 @@ const abi = [
 
 var contract = new web3.eth.Contract(abi, addressContract);
 
-contract.getPastEvents(
-    "Transfer`",
-    {
-        fromBlock: "10758840",
-        toBlock: "latest"
-    }, 
-    (err, events) => {console.log(events)}
-)
+// web3.eth.getGasPrice().then((result) => {
+//     console.log(web3.utils.fromWei(result, "gwei"))
+// })
+
+console.log(web3.utils.sha3("LE HONG VO"));
+console.log(web3.utils.keccak256("LE HONG VO"));
+console.log(web3.utils.soliditySha3("LE HONG VO"));
+console.log(web3.utils.randomHex(256));
